@@ -1,0 +1,16 @@
+#map-canvas {
+    width: 650px;
+    height: 450px;
+}
+.wrapp
+{
+    text-align: center;
+}
+div#map-canvas
+{
+    margin:0 auto 0 auto;
+}
+body
+{
+    background-image: url("https://www.just-wp-it.com/wp-content/uploads/2016/03/light-blue-wallpaper-hd-quality.jpg");
+}

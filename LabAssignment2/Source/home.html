@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="" data-ng-app="GoogleDirection">
+<head>
+    <meta t="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular Demo</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js" type="application/javascript"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places&key=AIzaSyDODWbm1uPWUDOgi7KbQoyYdQaXL9cmNmk"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href ="./css/home.css">
+
+</head>
+
+<body>
+<h1 align="center">Home Page</h1>
+<div class="wrapp" ng-controller="googlemapoutput">
+    <div class="row">
+        <input type="text"  ng-model="startlocation" id="startlocation" placeholder="Select start location"/>
+        <input type="text"  ng-model="endlocation" id="endlocation" placeholder="Select destination location"/>
+        <button id="btn" ng-click="calcRoute()">
+            Get Direction
+        </button>
+        <br/></br>
+    </div>
+
+    <p>Temperature at starting point:</p>
+    {{ StartWeather }}
+    <div class="currentIcon" ng-bind-html-unsafe="currentIcon.html"></div>
+
+
+    <p>Temperature at destination point:</p>
+    {{ EndWeather }}
+
+    <div id="map-canvas" style="height: 400px;"></div>
+</div>
+
+</body>
+</html>
+
+<script>
+
+    angular.module('GoogleDirection', [])
+        .controller('googlemapoutput',  function ($scope,$http)  {
+
+            var map;
+            var mapOptions;
+            var directionsDisplay = new google.maps.DirectionsRenderer({
+                draggable: true
+            });
+            var directionsService = new google.maps.DirectionsService();
+
+            var defaultBounds = new google.maps.LatLngBounds(new google.maps.LatLng(-33.8902, 151.1759), new google.maps.LatLng(-33.8474, 151.2631));
+
+            var options = {
+                bounds: defaultBounds,
+                types: ['geocode']
+            };
+
+            var startLocation=document.getElementById('startlocation');
+            var endLocation=document.getElementById('endlocation');
+            var autocompleteStart = new google.maps.places.Autocomplete(startLocation, options);
+            var autocompleteEnd = new google.maps.places.Autocomplete(endLocation, options);
+
+            google.maps.event.addListener(autocompleteStart, 'place_changed', function () {
+                var place = autocompleteStart.getPlace();
+                console.log(place);
+            });
+
+            $scope.initialize = function () {
+                var pos = new google.maps.LatLng(0, 0);
+                var mapOptions = {
+                    zoom: 3,
+                    center: pos
+                };
+
+                map = new google.maps.Map(document.getElementById('map-canvas'),
+                    mapOptions);
+            };
+            $scope.calcRoute = function () {
+                var end = document.getElementById('endlocation').value;
+                var start = document.getElementById('startlocation').value;
+
+                var startLocationUrl='https://api.wunderground.com/api/81c5ab4040ab0441/conditions/q/' +start.split(',')[1]+'/' +start.split(',')[0] +'.json';
+                console.log(startLocationUrl);
+                $http.get(startLocationUrl).success(function(data1){
+                    console.log("Start Weather")
+                    icon = data1.current_observation.icon_url;
+                    $scope.StartWeather = data1.current_observation.temp_f +' Fahrenheit';
+                    $scope.currentIcon = {
+                        html: "<img src='" + icon + "'/>"
+                    }
+                });
+
+                var endLocationUrl='https://api.wunderground.com/api/81c5ab4040ab0441/conditions/q/' +end.split(',')[1]+'/' +end.split(',')[0] +'.json';
+                console.log(endLocationUrl);
+                $http.get(endLocationUrl).success(function(data2){
+                    console.log("End Weather")
+                    icon = data2.current_observation.icon_url;
+                    console.log(data2.current_observation.temp_f);
+                    $scope.EndWeather = data2.current_observation.temp_f +' Fahrenheit';
+                    $scope.currentIcon = {
+                        html: "<img src='" + icon + "'/>"
+                    }
+                });
+
+                var request = {
+                    origin: start,
+                    destination: end,
+                    travelMode: google.maps.TravelMode.DRIVING
+                };
+
+                directionsService.route(request, function (response, status) {
+                    if (status == google.maps.DirectionsStatus.OK) {
+                        directionsDisplay.setMap(map);
+                        directionsDisplay.setDirections(response);
+                        console.log(status);
+                    }
+                });
+            };
+            google.maps.event.addDomListener(window, 'load', $scope.initialize);
+        });
+
+</script>

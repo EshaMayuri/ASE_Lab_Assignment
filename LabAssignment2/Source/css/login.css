@@ -1,0 +1,29 @@
+h1{ text-align: center;
+    color: black
+}
+body {
+    background-image: url("https://www.just-wp-it.com/wp-content/uploads/2016/03/light-blue-wallpaper-hd-quality.jpg");
+    background-color: white;
+}
+form-control{
+    border-radius: 6px;
+    background-color: #2a2464;
+    color: white;
+}
+
+.btn {
+    align-items: center;
+    border-radius: 4px;
+    background-color: #46476a;
+    color: white;
+    width: 40%;
+}
+
+form
+{
+    background: rgba(183,190,204,0.24);
+    color: black;
+    padding: 100px;
+    border-radius: 5px;
+    box-shadow: 0 0px 12px rgba(0, 0, 0, 0.74);
+}
