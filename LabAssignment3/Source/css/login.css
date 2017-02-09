@@ -1,0 +1,21 @@
+h1{ text-align: center;
+    color: white;
+}
+body {
+    background-image: url("https://www.sevenforums.com/attachments/tutorials/355724d1428693413-log-screen-change-backgrounddefault.jpg");
+    background-color: transparent;
+}
+form-control{
+    border-radius: 6px;
+    background-color: #2a2464;
+    color: white;
+}
+
+form
+{
+    background: rgba(183,190,204,0.24);
+    color: black;
+    padding: 100px;
+    border-radius: 5px;
+    box-shadow: 0 0px 12px rgba(0, 0, 0, 0.74);
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7">
+<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8">
+<html lang="en" ng-app="myApp" class="no-js lt-ie9">
+<html lang="en" ng-app="myApp" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My Movie App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href ="./css/home.css">
+
+</head>
+<body>
+<div  ng-controller="View1Ctrl" style="top: 200px">
+    <div class="menu" id="div_SearchContainer" align="center">
+        <img style="width: 600px; height: 120px" src="http://theathleticnerd.com/wp-content/uploads/2013/02/The-Athletic-Nerd-Movie-Reviews.gif">
+        <h1 style="text-align: center; color: rgb(66, 137, 244)">Search for your favourite movie!</h1>
+        <input type="text" id="txt_movieName" placeholder="Enter the name of the movie that you are looking for" style="margin-left: 100px; width: 200px"/>
+        <button style="background-color: floralwhite; color: black" id="btn_getReview" ng-click="getMovies()">Get Movies</button>
+    </div>
+    <div id="div_movieList" style="display:none;"><!--style="height: 300px; width: 500px;padding-left: 500px; overflow: auto;background-color: transparent;color: white;padding: auto;"-->
+         <!--id="div_movieList" style="display:none;">-->
+        <h2 style="text-align: center; color: rgb(66, 137, 244)">List of movies from TMDB API</h2>
+        <div id ="movie" style="height: 300px; width: 500px;padding-left: 500px; overflow: auto;background-color: transparent;color: white;padding: auto;">
+            <ul>
+                <li ng-repeat="movie in movieList" style="font-size: x-large; color: rgb(66, 137, 244); text-align: center; list-style: none" list-style-position:inside;">
+                <a  href="" ng-click="getOverviews(movie)" style="font-size: x-large; color: floralwhite; text-align: center;">
+                    {{movie.name}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="div_movieDetails" style="display:none;">
+        <p>
+            <TABLE align="center" BORDER=10px CELLPADDING=4> <TR> <TH style="color: rgb(66, 137, 244); font-size: 25px; background:transparent" COLSPAN=2>Displaying selected movie details </TH> </TR>
+                <TR style="color: white"> <TD>Movie Selected: </TD> <TD style="font-style: italic; color: whitesmoke">{{movieSelected}}</TD> </TR>
+                <TR style="color: white"> <TD>Overview of the movie: </TD> <TD style="font-style: italic; color: whitesmoke">{{movieOverview}}</TD> </TR>
+                <TR style="color: white"> <TD>Movie release date: </TD> <TD style="font-style: italic; color: whitesmoke">{{movieReleaseDate}}</TD> </TR>
+                <TR style="color: white"> <TD>Movie rating as per TMDB: </TD> <TD style="font-style: italic; color: whitesmoke">{{movieRating + '/10'}}</TD> </TR>
+                <TR style="color: white"> <TD>Movie type: </TD> <TD style="font-style: italic; color: whitesmoke">{{movieGenere}}</TD> </TR>
+            </TABLE>
+        <img src={{poster}}>
+        </p>
+    </div>
+    <div id="div_ReviewList" style="display:none;"  >
+        <p ng-model="ReviewWithSentiment">
+            <TABLE align="center" BORDER=10px CELLPADDING=4> <TR> <TH style="color: rgb(66, 137, 244); font-size: 25px; background:transparent" COLSPAN=2>Sentiment Analysis of the latest review of the movie</TH> </TR>
+                <TR style="color: white"> <TD>Most recent review</TD> <TD style="font-style: italic; color: whitesmoke">{{ReviewWithSentiment.reviewText}}</TD> </TR>
+                <TR style="color: white"> <TD>Sentiment of the review</TD> <TD style="font-style: italic; color: whitesmoke">{{ReviewWithSentiment1.sentiment}}</TD> </TR>
+                <TR style="color: white"> <TD>Sentiment Score of the review</TD> <TD style="font-style: italic; color: whitesmoke">{{ReviewWithSentiment1.score}}</TD> </TR>
+                <TR style="color: white"> <TD>Emotion Score of joy for movie review</TD> <TD style="font-style: italic; color: whitesmoke">{{ReviewWithSentiment.joy}}</TD> </TR>
+                <TR style="color: white"> <TD>Emotion Score of sadness for movie review</TD> <TD style="font-style: italic; color: whitesmoke">{{ReviewWithSentiment.sadness}}</TD> </TR>
+            </TABLE>
+        </p>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+    <script type="text/javascript" src = "./js/home.js"></script>
+</body>
+</html>
