@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_home"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.sample.esha.mymovieapp.HomeActivity"
+    android:background="@drawable/background">
+
+    <!--<LinearLayout--><![CDATA[
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        tools:context="com.sample.foo.simplewebapi.MainActivity"
+        android:id="@+id/home_container"
+        android:weightSum="1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+
+
+    ]]>
+
+    <EditText
+        android:id="@+id/txt_Email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:hint="Search Here"
+        android:layout_weight="0.04"
+        android:layout_alignTop="@+id/txt_Result"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="33dp"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/holo_blue_dark"/>
+
+    <Button
+        android:id="@+id/btn_Search"
+        android:layout_width="118dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        style="@style/Base.Widget.AppCompat.Button"
+        android:text="Search"
+        android:onClick="Search"
+        android:textColor="#ba6349"
+        android:layout_marginTop="14dp"
+        android:layout_below="@+id/txt_Email"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_Result2"
+        android:autoLink="all"
+        android:clickable="true"
+        android:onClick="Youtube"
+        android:layout_marginTop="26dp"
+        android:layout_below="@+id/txt_Result1"
+        android:layout_alignParentStart="true"
+        android:textColor="@android:color/white"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_Result3"
+        android:autoLink="all"
+        android:clickable="true"
+        android:onClick="Youtube"
+        android:layout_marginTop="26dp"
+        android:layout_below="@+id/txt_Result2"
+        android:layout_alignParentStart="true"
+        android:textColor="@android:color/white"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:id="@+id/txt_Result5"
+        android:autoLink="all"
+        android:clickable="true"
+        android:onClick="Youtube"
+        android:layout_below="@+id/txt_Result4"
+        android:layout_alignParentStart="true"
+        android:textColor="@android:color/white"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:id="@+id/txt_Result4"
+        android:autoLink="all"
+        android:clickable="true"
+        android:onClick="Youtube"
+        android:layout_below="@+id/txt_Result3"
+        android:layout_alignParentStart="true"
+        android:textColor="@android:color/white"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_Result1"
+        android:autoLink="all"
+        android:clickable="true"
+        android:onClick="Youtube"
+        tools:fontFamily="sans-serif"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:textColor="@android:color/white"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        android:id="@+id/btn_Logout"
+        android:onClick="logout"
+        android:layout_gravity="right"
+        android:textColor="#d92b2b"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        style="@style/Widget.AppCompat.Button.Borderless" />
+
+    <TextView
+        android:id="@+id/txt_Result"
+        android:layout_width="fill_parent"
+        android:layout_height="44dp"
+        android:visibility="visible"
+        android:textSize="@dimen/abc_text_size_medium_material"
+        android:text="Begin your search for favourite video here"
+        android:textColor="@android:color/white"
+        android:layout_below="@+id/btn_Logout"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="Select the link to watch video"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:textColor="@android:color/white"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="Top 5 Search Results"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView6"
+        android:textColor="@android:color/holo_blue_dark"
+        android:layout_above="@+id/txt_Result1"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="11dp" />
+
+    <!--</LinearLayout>-->
+
+</RelativeLayout>

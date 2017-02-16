@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_registration"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.sample.esha.mymovieapp.RegistrationActivity"
+    android:background="@drawable/background">
+
+    <TextView
+        android:text="New User Registration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:id="@+id/lbl_registration"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:textColor="@android:color/white"/>
+
+    <TextView
+        android:text="Username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="27dp"
+        android:id="@+id/lbl_username"
+        android:layout_below="@+id/lbl_registration"
+        android:textColor="@android:color/white"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/txt_emailId"
+        android:hint="Email Id"
+        android:layout_below="@+id/lbl_emailId"
+        android:layout_alignParentStart="true"
+        android:textColorHint="@android:color/holo_blue_dark"
+        android:textColor="@android:color/white"/>
+
+    <TextView
+        android:text="Email Id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lbl_emailId"
+        android:layout_below="@+id/txt_username"
+        android:layout_alignParentStart="true"
+        android:textColor="@android:color/white"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/txt_username"
+        android:textColorLink="@android:color/background_dark"
+        android:hint="Username"
+        android:layout_below="@+id/lbl_username"
+        android:layout_alignParentStart="true"
+        android:textColorHint="@android:color/holo_blue_dark"
+        android:textColor="@android:color/white"/>
+
+    <TextView
+        android:text="Password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lbl_password"
+        android:textColor="@android:color/white"
+        android:layout_below="@+id/txt_emailId"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="Register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_Register"
+        android:onClick="Register"
+        android:layout_marginStart="114dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/txt_password"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/txt_password"
+        android:hint="Password"
+        android:textColorHint="@android:color/holo_blue_dark"
+        android:layout_below="@+id/lbl_password"
+        android:layout_alignParentStart="true"
+        android:textColor="@android:color/white"/>
+
+</RelativeLayout>
