@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Esha\'sAndroidApplication</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_home">Map</string>
+    <string name="title_activity_map">Map</string>
+    <string name="title_activity_main">MainActivity</string>
+</resources>
