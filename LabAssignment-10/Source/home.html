@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="home" ng-controller="HomeController">
+<head>
+    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href='http://fonts.googleapis.com/css?family=Rokkitt' rel='stylesheet' type='text/css'>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+        .site-bg {
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            z-index: 0;
+            background-image: url(/images/bg.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .site-bg-overlay {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            background: rgba(92, 180, 142, 0.4);
+        }
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap" style="width:60%;">
+    <!-- strat-contact-form -->
+    <div class="contact-form" style="width:90%;">
+        <!-- start-form -->
+        <form class="contact_form"  style="background: #FFF; width:100%;" ng-init="FetchData()" name="contact_form">
+            <a style=" color: rgb(66, 137, 244); position: absolute;top: 0; right: 0" href="index.html" target="_top">Logout</a>
+            <h1 style="position: absolute; top: 5; right: 30%">Professor account details here</h1>
+            <br>
+            <br>
+            <hr>
+            <br>
+            <h2 style="color: rgb(66, 137, 244); font-size: 20px; background:transparent">Add a new professor account details here</h2>
+            <input type="submit" name="Sign Up" style="width:100%;" ng-click="AddNew()" value="Add new details"/>
+            <!--<button style="align-items :center; width:50%" class="goButton" ng-click="AddNew()">Add new details</button>-->
+            <br>
+            <hr>
+            <br>
+            <h2 style="color: rgb(66, 137, 244); font-size: 20px; background:transparent">List of professors account details below</h2>
+            <br>
+            <TABLE align="center" BORDER=10px CELLPADDING=6>
+                <TR>
+                    <TD style="color: rgb(0, 0, 0); font-size: 15px; background:transparent" COLSPAN=2>First Name</TD>
+                    <TD style="color: rgb(0, 0, 0); font-size: 15px; background:transparent" COLSPAN=2>Last Name</TD>
+                    <TD style="color: rgb(0, 0, 0); font-size: 15px; background:transparent" COLSPAN=2>Email Id</TD>
+                    <!--<TD style="color: rgb(0, 0, 0); font-size: 15px; background:transparent" COLSPAN=2>Password</TD>-->
+                    <TD style="color: rgb(0, 0, 0); font-size: 15px; background:transparent" COLSPAN=2>Edit Or Delete</TD>
+                </TR>
+                <TR ng-repeat="cred in credlist">
+                    <TD style="color: rgb(66, 137, 244); font-size: 15px; background:transparent" COLSPAN=2>
+                        <input style="color: rgb(66, 137, 244)" ng-change="edit(cred)" type='text' ng-model="cred.fname">
+                    </TD>
+                    <TD style="color: rgb(66, 137, 244); font-size: 15px; background:transparent" COLSPAN=2>
+                        <input style="color: rgb(66, 137, 244)" ng-change="edit(cred)" type='text' ng-model="cred.lname">
+                    </TD>
+                    <TD style="color: rgb(66, 137, 244); font-size: 15px; background:transparent" COLSPAN=2>
+                        <input style="color: rgb(66, 137, 244)" ng-change="edit(cred)" type='text' ng-model="cred.email">
+                    </TD>
+                    <!--<TD style="color: rgb(66, 137, 244); font-size: 15px; background:transparent" COLSPAN=2>-->
+                        <!--<input style="color: rgb(66, 137, 244)" ng-change="edit(cred)" type='text' ng-model="cred.password">-->
+                    <!--</TD>-->
+                    <TD>
+                        <button class="goButton" style="background: rgb(66, 137, 244); color: #fff; " ng-click="Update(cred)">Edit</button><a>/</a>
+                        <button class="goButton" style="background: rgb(66, 137, 244); color: #fff; " ng-click="Delete(cred)">Delete</button>
+                    </TD>
+                </TR>
+            </TABLE>
+            <div class="clear"></div>
+            <div class="clear"></div>
+        </form>
+        <div class="clear"></div>
+    </div>
+    <div class="footer">
+    </div>
+</div>
+<script type="text/javascript" src="http://code.angularjs.org/1.1.1/angular.js"></script>
+<script type="text/javascript" src="http://code.angularjs.org/1.1.1/angular-resource.js"></script>
+<script type="text/javascript" src="http://code.angularjs.org/1.1.1/angular-sanitize.js"></script>
+<script type = "text/javascript" src ="./js/home.js"></script>
+</body>
+</html>

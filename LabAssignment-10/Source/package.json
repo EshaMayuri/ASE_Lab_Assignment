@@ -1,0 +1,12 @@
+{
+  "name": "Mongo-Rest-Application",
+  "version": "0.0.1",
+  "private": true,
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+	"start": "server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

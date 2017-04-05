@@ -1,0 +1,57 @@
+<html ng-app="registration" ng-controller="RegistrationController">
+<head >
+    <title>Administrator Registration Page</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href='http://fonts.googleapis.com/css?family=Rokkitt' rel='stylesheet' type='text/css'>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+        .site-bg {
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            z-index: 0;
+            background-image: url(/images/bg.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .site-bg-overlay {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            background: rgba(92, 180, 142, 0.4);
+        }
+
+    </style>
+</head>
+<body>
+<div class="wrap" style="width:30%;">
+    <div class="contact-form" style="width:100%;">
+        <form class="contact_form"  style="background: #FFF; width:100%;" name="contact_form">
+            <h1>Admin Login Here</h1>
+            <input type="submit" name="Sign In" style="width:100%;" ng-click="Login()" value="Sign In"/>
+            <div class="clear"></div>
+            <div class="clear"></div>
+            <br>
+            <hr>
+            <br>
+            <input type="submit" name="Sign In" style="width:100%;" ng-click="SignUp()" value="Sign Up"/>
+
+        </form>
+        <div class="clear"></div>
+    </div>
+    <div class="footer">
+    </div>
+</div>
+<script type="text/javascript" src="http://code.angularjs.org/1.1.1/angular.js"></script>
+<script type="text/javascript" src="http://code.angularjs.org/1.1.1/angular-resource.js"></script>
+<script type="text/javascript" src="http://code.angularjs.org/1.1.1/angular-sanitize.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
