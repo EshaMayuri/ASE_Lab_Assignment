@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/VrApp.iml" filepath="$PROJECT_DIR$/VrApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Source.iml" filepath="$PROJECT_DIR$/Source.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/sdk-audio-1.20.0/sdk-audio-1.20.0.iml" filepath="$PROJECT_DIR$/sdk-audio-1.20.0/sdk-audio-1.20.0.iml" />
       <module fileurl="file://$PROJECT_DIR$/sdk-base-1.20.0/sdk-base-1.20.0.iml" filepath="$PROJECT_DIR$/sdk-base-1.20.0/sdk-base-1.20.0.iml" />
